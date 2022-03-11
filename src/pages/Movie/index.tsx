@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { getMoviesAPI } from 'apis/movie.api';
 import { IMovie } from 'interfaces/movie.interface';
 import './Movie.scss';
+import Carousel from 'components/Carousel';
 
 const Movie: FC = () => {
     const [movies, setMovies] = useState([] as Array<IMovie>);
@@ -15,7 +16,11 @@ const Movie: FC = () => {
         fetchMovies();
     }, []);
 
-    return <div>Movie</div>;
+    return (
+        <div className='movie-page'>
+            <Carousel movies={movies} />
+        </div>
+    );
 };
 
 export default Movie;
