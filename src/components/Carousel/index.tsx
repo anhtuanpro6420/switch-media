@@ -17,6 +17,15 @@ const Carousel: FC<Props> = ({ movies = [], onSelectMovie }) => {
         slidesToShow: 6,
         slidesToScroll: 6,
         className: 'slides',
+        responsive: [
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            },
+        ],
     };
 
     return (

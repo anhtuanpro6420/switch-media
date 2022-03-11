@@ -8,11 +8,25 @@ interface Props {
 }
 
 const MovieDetail: FC<Props> = ({ movie }) => {
-    const { Poster, Title, Released, Plot, Rating } = movie || {};
+    const {
+        Poster,
+        Title,
+        Released,
+        Plot,
+        Rating,
+        Director,
+        Actors,
+        Metascore,
+        Votes,
+    } = movie || {};
     return (
         <div className='movie-detail-container'>
             <div className='poster'>
                 <Image src={Poster} className='poster-image' />
+                <ul className='metadata-mobile'>
+                    <li>Metascore: {Metascore}</li>
+                    <li>Votes: {Votes}</li>
+                </ul>
             </div>
             <div className='movie-body-container'>
                 <div className='title-container'>
@@ -23,6 +37,8 @@ const MovieDetail: FC<Props> = ({ movie }) => {
                         <li>Released Date: {Released}</li>
                         <li>Plot: {Plot}</li>
                         <li>Rating: {Rating}</li>
+                        <li>Director: {Director}</li>
+                        <li>Actors: {Actors}</li>
                     </ul>
                 </div>
             </div>
