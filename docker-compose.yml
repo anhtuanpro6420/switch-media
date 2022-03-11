@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - REACT_APP_BASE_URI=https://run.mocky.io/v3
     volumes:
       - ./src:/app/src
     ports:
