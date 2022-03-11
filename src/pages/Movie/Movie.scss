@@ -1,3 +1,18 @@
 .movie-page {
     padding: 50px;
+    .genres-selection-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        .render-selection {
+            width: 80%;
+            @media (min-width: 576px) {
+                width: 30%;
+            }
+        }
+        @media (min-width: 576px) {
+            justify-content: flex-end;
+        }
+    }
 }

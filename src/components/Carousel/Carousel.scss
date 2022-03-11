@@ -1,5 +1,8 @@
 .slider-container {
     margin-top: 20px;
+    .slick-cloned {
+        display: none;
+    }
     .slider-image {
         width: 80% !important;
         cursor: pointer;
