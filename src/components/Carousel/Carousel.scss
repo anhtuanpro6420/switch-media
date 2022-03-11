@@ -1,8 +1,22 @@
-.slider-image {
-    height: 200px;
-    margin: 5px;
-    border: 1px solid #f1f1f1;
+.slider-container {
+    margin-top: 20px;
+    .slider-image {
+        width: 80% !important;
+        cursor: pointer;
+        height: 200px;
+        margin: 5px;
+        border: 1px solid #f1f1f1;
+        .ant-image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            .poster-image {
+                height: 100%;
+            }
+        }
+    }
 }
+
 .slick-arrow {
     z-index: 99999 !important;
     background-color: black !important;

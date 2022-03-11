@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Image } from 'antd';
 import Slider from 'react-slick';
 import './Carousel.scss';
 import { IMovie } from 'interfaces/movie.interface';
@@ -19,9 +20,9 @@ const Carousel: FC<Props> = ({ movies = [], onSelectMovie }) => {
     };
 
     return (
-        <Slider {...settings}>
+        <Slider {...settings} className='slider-container'>
             {movies.map((movie: IMovie) => {
-                const { Title, Id } = movie || {};
+                const { Poster, Id } = movie || {};
                 return (
                     // eslint-disable-next-line jsx-a11y/click-events-have-key-events
                     <div
@@ -33,7 +34,11 @@ const Carousel: FC<Props> = ({ movies = [], onSelectMovie }) => {
                         role='button'
                         tabIndex={0}
                     >
-                        {Title}
+                        <Image
+                            src={Poster}
+                            className='poster-image'
+                            preview={false}
+                        />
                     </div>
                 );
             })}

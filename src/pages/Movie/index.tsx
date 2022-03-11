@@ -26,7 +26,7 @@ const Movie: FC = () => {
 
     return (
         <div className='movie-page'>
-            <MovieDetail movie={selectedMovie} />
+            {selectedMovie && <MovieDetail movie={selectedMovie} />}
             <Carousel movies={movies} onSelectMovie={handleSelectMovie} />
         </div>
     );
