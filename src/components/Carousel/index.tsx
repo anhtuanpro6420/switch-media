@@ -5,9 +5,10 @@ import { IMovie } from 'interfaces/movie.interface';
 
 interface Props {
     movies: Array<IMovie>;
+    onSelectMovie: (event: React.MouseEvent, movie: IMovie) => void;
 }
 
-const Carousel: FC<Props> = ({ movies = [] }) => {
+const Carousel: FC<Props> = ({ movies = [], onSelectMovie }) => {
     const settings = {
         dots: false,
         infinite: true,
@@ -22,7 +23,16 @@ const Carousel: FC<Props> = ({ movies = [] }) => {
             {movies.map((movie: IMovie) => {
                 const { Title, Id } = movie || {};
                 return (
-                    <div key={Id} className='slider-image'>
+                    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+                    <div
+                        key={Id}
+                        className='slider-image'
+                        onClick={(event: React.MouseEvent) =>
+                            onSelectMovie(event, movie)
+                        }
+                        role='button'
+                        tabIndex={0}
+                    >
                         {Title}
                     </div>
                 );
